@@ -8,7 +8,33 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Validate Thing.ttl
+      # find a way to validate all files at once
+      - name: Validate
         uses: vemonet/jena-riot-action@v3.14
         with:
-          input: knowledge/Thing.ttl,knowledge/Toilet.ttl
+          input: knowledge/EntranceOrExit.ttl
+
+      - name: Validate
+        uses: vemonet/jena-riot-action@v3.14
+        with:
+          input: knowledge/GroundSurface.ttl
+
+      - name: Validate
+        uses: vemonet/jena-riot-action@v3.14
+        with:
+          input: knowledge/Place.ttl
+
+      - name: Validate
+        uses: vemonet/jena-riot-action@v3.14
+        with:
+          input: knowledge/Product.ttl
+
+      - name: Validate
+        uses: vemonet/jena-riot-action@v3.14
+        with:
+          input: knowledge/Thing.ttl
+
+      - name: Validate
+        uses: vemonet/jena-riot-action@v3.14
+        with:
+          input: knowledge/Toilet.ttl

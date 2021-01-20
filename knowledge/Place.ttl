@@ -1,0 +1,27 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Place.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+:hasEntrance a rdf:Property ;
+    :domainIncludes :Place ;
+    :rangeIncludes :EntranceOrExit ;
+    rdfs:label "hasEntrances" ;
+    rdfs:comment """
+        Describes the entrance(s) and exit(s) from/to this place.
+    """ .
+
+:hasGroundSurface a rdf:Property ;
+    :domainIncludes :Place ;
+    :rangeIncludes :GroundSurfaceEnumeration ;
+    rdfs:label "hasGroundSurface" ;
+    rdfs:comment """
+        Describes the ground surface at this place.
+        This is relevant for accessibility.
+    """ .

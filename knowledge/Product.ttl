@@ -1,0 +1,16 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product.
+#
+
+:isPortable a rdf:Property ;
+    :domainIncludes :Product ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isPortable" ;
+    rdfs:comment """
+        Denotes a more specific type of [[Product]], which can be moved. For instance a portable [[Toilet]] on festivals and construction sites (see [Wikipedia](https://en.wikipedia.org/wiki/Portable_toilet)).
+    """ .

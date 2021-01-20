@@ -1,0 +1,7 @@
+{
+    "@context": "https://schema.org/",
+    "@type":"ParkingFacility",
+    "name": "Parking facility in front of a hotel.",
+    "description": "A parking facility which ground surface is dirt.",
+    "hasGroundSurface": "http://schema.org/GroundSurfaceDirt"
+}

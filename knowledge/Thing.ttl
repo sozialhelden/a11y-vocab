@@ -4,9 +4,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 #
-# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/41
-#
 # This file contains :Thing extensions.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/41
 #
 :accessMode
     :domainIncludes :Thing ;
@@ -30,6 +30,11 @@
     todo:item "extend rdfs:comment, for example ISO-12345" ;
     todo:item "add :source" .
 
+:accessibilitySummary
+    :domainIncludes :Thing ;
+    rdfs:comment "a11y: Properties domain now applies to schema:Thing instead of only schema:CreativeWork." ;
+    todo:item "add :source" .
+
 :physicalAccessibilityControl a rdf:Property ;
     rdfs:label "physicalAccessibilityControl" ;
     :domainIncludes :Thing ;
@@ -50,8 +55,3 @@
     :rangeIncludes :Thing ;
     todo:item "add :source" ;
     todo:item "write rdfs:comment" .
-
-:accessibilitySummary
-    :domainIncludes :Thing ;
-    rdfs:comment "a11y: Properties domain now applies to schema:Thing instead of only schema:CreativeWork." ;
-    todo:item "add :source" .
