@@ -1,0 +1,57 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# 
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/41
+#
+# This file contains :Thing extensions.
+#
+:accessMode 
+    :domainIncludes :Thing ;
+    rdfs:comment """
+        a11y: This property now applies to schema:Thing instead of only schema:CreativeWork. 
+    """ ;
+    todo:item "add :source" .
+
+:accessModeSufficient 
+    :domainIncludes :Thing ;
+    rdfs:comment "a11y: This property now applies to schema:Thing instead of only schema:CreativeWork." ;
+    todo:item "add :source" .
+
+:accessibilityHumanInterface a rdf:Property ;
+    rdfs:label "accessibilityHumanInterface" ;
+    :domainIncludes :Thing ;
+    :rangeIncludes :Text ;
+    rdfs:comment """
+        Indicates that the resource is compatible with the referenced standardized human interface.
+    """
+    todo:item "extend rdfs:comment, for example ISO-12345" 
+    todo:item "add :source" .
+
+:physicalAccessibilityControl a rdf:Property ;
+    rdfs:label "physicalAccessibilityControl" ;
+    :domainIncludes :Thing ;
+    :rangeIncludes :Thing ;
+    todo:item "add :source" ;
+    todo:item "write rdfs:comment" .
+
+:physicalAccessibilityFeature a rdf:Property ;
+    rdfs:label "physicalAccessibilityFeature" ;
+    :domainIncludes :Thing ;
+    :rangeIncludes :Thing ;
+    todo:item "add :source" ;
+    todo:item "write rdfs:comment" .
+
+:physicalAccessibilityHazard a rdf:Property ;
+    rdfs:label "physicalAccessibilityHazard" ;
+    :domainIncludes :Thing ;
+    :rangeIncludes :Thing ;
+    todo:item "add :source" ;
+    todo:item "write rdfs:comment" .
+
+:accessibilitySummary 
+    :domainIncludes :Thing ;
+    rdfs:comment "a11y: Properties domain now applies to schema:Thing instead of only schema:CreativeWork." ;
+    todo:item "add :source" .
