@@ -12,7 +12,7 @@
 #
 # Classes
 #
-:Toilet a rdfs:Class
+:Toilet a rdfs:Class ;
     rdfs:subClassOf :Product;
     rdfs:label "Toilet" ;
     :sameAs <https://www.wikidata.org/wiki/Q7857> ;
@@ -23,7 +23,7 @@
         Note that a [[PublicToilet]] can contain multiple [[Toilet]]s.
     """ .
 
-:SquatToilet a rdfs:Class
+:SquatToilet a rdfs:Class ;
     rdfs:subClassOf :Toilet;
     rdfs:label "Squat Toilet" ;
     :sameAs <https://www.wikidata.org/wiki/Q1363734> ;
@@ -31,7 +31,7 @@
         A more specific type of [[Toilet]] for used by squatting.
     """ .
 
-:Urinal a rdfs:Class
+:Urinal a rdfs:Class ;
     rdfs:subClassOf :Toilet;
     rdfs:label "Urinal" ;
     :sameAs <https://www.wikidata.org/wiki/Q152285> ;
