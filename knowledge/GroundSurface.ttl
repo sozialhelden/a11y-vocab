@@ -12,7 +12,7 @@
 #
 # Classes
 #
-:GroundSurfaceEnumeration a rdfs:Class
+:GroundSurfaceEnumeration a rdfs:Class ;
     rdfs:subClassOf :Enumeration ;
     rdfs:label "GroundSurface" ;
     :sameAs <https://wiki.openstreetmap.org/wiki/Key:surface> ;

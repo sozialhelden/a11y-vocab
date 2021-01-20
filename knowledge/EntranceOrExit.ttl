@@ -12,7 +12,7 @@
 #
 # Classes
 #
-:EntranceOrExit a rdfs:Class
+:EntranceOrExit a rdfs:Class ;
     rdfs:subClassOf :Place ;
     rdfs:label "EntranceOrExit" ;
     rdfs:comment """
