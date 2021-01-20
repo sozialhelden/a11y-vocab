@@ -3,19 +3,19 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# 
+#
 # @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/41
 #
 # This file contains :Thing extensions.
 #
-:accessMode 
+:accessMode
     :domainIncludes :Thing ;
     rdfs:comment """
-        a11y: This property now applies to schema:Thing instead of only schema:CreativeWork. 
+        a11y: This property now applies to schema:Thing instead of only schema:CreativeWork.
     """ ;
     todo:item "add :source" .
 
-:accessModeSufficient 
+:accessModeSufficient
     :domainIncludes :Thing ;
     rdfs:comment "a11y: This property now applies to schema:Thing instead of only schema:CreativeWork." ;
     todo:item "add :source" .
@@ -51,7 +51,7 @@
     todo:item "add :source" ;
     todo:item "write rdfs:comment" .
 
-:accessibilitySummary 
+:accessibilitySummary
     :domainIncludes :Thing ;
     rdfs:comment "a11y: Properties domain now applies to schema:Thing instead of only schema:CreativeWork." ;
     todo:item "add :source" .
