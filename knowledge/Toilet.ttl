@@ -15,6 +15,7 @@
 :Toilet a rdfs:Class ;
     rdfs:subClassOf :Product;
     rdfs:label "Toilet" ;
+    :sameAs <http://live.dbpedia.org/page/Toilet> ;
     :sameAs <https://www.wikidata.org/wiki/Q7857> ;
     rdfs:comment """
         Toilet describes the fixtures in a toilet room itself
@@ -26,6 +27,7 @@
 :SquatToilet a rdfs:Class ;
     rdfs:subClassOf :Toilet;
     rdfs:label "Squat Toilet" ;
+    :sameAs <http://live.dbpedia.org/page/Squat_toilet> ;
     :sameAs <https://www.wikidata.org/wiki/Q1363734> ;
     rdfs:comment """
         A more specific type of [[Toilet]] for used by squatting.
@@ -34,6 +36,7 @@
 :Urinal a rdfs:Class ;
     rdfs:subClassOf :Toilet;
     rdfs:label "Urinal" ;
+    :sameAs <http://live.dbpedia.org/page/Urinal> ;
     :sameAs <https://www.wikidata.org/wiki/Q152285> ;
     rdfs:comment """
         A more specific type of [[Toilet]] for standing use and a device in which to urinate while standing ([Wikidata](https://www.wikidata.org/wiki/Q152285)).

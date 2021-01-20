@@ -15,6 +15,7 @@
 :GroundSurfaceEnumeration a rdfs:Class ;
     rdfs:subClassOf :Enumeration ;
     rdfs:label "GroundSurface" ;
+    :sameAs <http://live.dbpedia.org/page/Surface> ;
     :sameAs <https://wiki.openstreetmap.org/wiki/Key:surface> ;
     rdfs:comment """
         Describes the quality of a physical ground surface.
@@ -23,8 +24,10 @@
 
 :GroundSurfaceDirt a :GroundSurfaceEnumeration ;
     rdfs:label "GroundSurfaceDirt" ;
+    :sameAs <http://live.dbpedia.org/page/Dirt> ;
     :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Ddirt> .
 
 :GroundSurfaceAsphalt a :GroundSurfaceEnumeration ;
     rdfs:label "GroundSurfaceAsphalt" ;
+    :sameAs <http://live.dbpedia.org/page/Asphalt> ;
     :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt> .
