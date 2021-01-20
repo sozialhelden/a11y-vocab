@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Validate RDF
-        uses: vemonet/jena-riot-action
+        uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Thing.ttl
