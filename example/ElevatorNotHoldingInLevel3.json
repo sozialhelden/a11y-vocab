@@ -1,0 +1,28 @@
+{
+    "@context": "https://schema.org/",
+    "@type":"Elevator",
+    "name": "Working elevator with level 3 not working.",
+    "hasOperationalStatus": [
+        {
+            "isWorking": "partially",
+            "validFrom": "2020-01-20 00:07:00",
+            "validThrough": "2020-01-20 00:18:00",
+            "connectedFloorLevel": [1, 2]
+        },
+        {
+            "isWorking": true,
+            "connectedFloorLevel": [1, 2, 3]
+        }
+    ]
+}
+
+{
+    "@context": "https://schema.org/",
+    "@type":"Elevator",
+    "name": "Not working elevator.",
+    "hasOperationalStatus": [
+        {
+            "isWorking": false
+        }
+    ]
+}
