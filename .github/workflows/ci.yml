@@ -7,8 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Validate RDF
+
+      - name: Validate Thing.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Thing.ttl
+
+      - name: Validate Thing.json
+        uses: vemonet/jena-riot-action@v3.14
+        with:
+          input: example/Thing.json
