@@ -1,0 +1,53 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Toilet.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/40
+#
+
+#
+# Classes
+#
+:Toilet a rdfs:Class
+    rdfs:subClassOf :Product;
+    rdfs:label "Toilet" ;
+    :sameAs <https://www.wikidata.org/wiki/Q7857> ;
+    rdfs:comment """
+        Toilet describes the fixtures in a toilet room itself
+        ([Wikipedia](https://en.wikipedia.org/wiki/Toilet)).
+        Can be combined with [[Place]] to describe that it is inside a [[Room]] or [[PublicToilet]] as [[partOf]], for example.
+        Note that a [[PublicToilet]] can contain multiple [[Toilet]]s.
+    """ .
+
+:SquatToilet a rdfs:Class
+    rdfs:subClassOf :Toilet;
+    rdfs:label "Squat Toilet" ;
+    :sameAs <https://www.wikidata.org/wiki/Q1363734> ;
+    rdfs:comment """
+        A more specific type of [[Toilet]] for used by squatting.
+    """ .
+
+:Urinal a rdfs:Class
+    rdfs:subClassOf :Toilet;
+    rdfs:label "Urinal" ;
+    :sameAs <https://www.wikidata.org/wiki/Q152285> ;
+    rdfs:comment """
+        A more specific type of [[Toilet]] for standing use and a device in which to urinate while standing ([Wikidata](https://www.wikidata.org/wiki/Q152285)).
+    """ .
+
+#
+# Properties
+#
+
+:spaceOnUsersLeftSide a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "spaceOnUsersLeftSide" ;
+    rdfs:comment """
+        Denotes how much space is on the left side of the user (from their perspective while use).
+        This is relevant for accessibility.
+    """ .

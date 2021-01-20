@@ -11,4 +11,4 @@ jobs:
       - name: Validate Thing.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
-          input: knowledge/Thing.ttl
+          input: knowledge/Thing.ttl,knowledge/Toilet.ttl
