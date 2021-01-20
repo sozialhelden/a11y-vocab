@@ -12,8 +12,3 @@ jobs:
         uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Thing.ttl
-
-      - name: Validate Thing.json
-        uses: vemonet/jena-riot-action@v3.14
-        with:
-          input: example/Thing.json
