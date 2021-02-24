@@ -1,0 +1,69 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product > Ramp.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:Ramp a rdfs:Class ;
+    rdfs:subClassOf :Product;
+    rdfs:label "Ramp" ;
+    :sameAs <https://dbpedia.org/page/Inclined_plane> ;
+    :sameAs <https://www.wikidata.org/wiki/Q661343> ;
+    rdfs:comment """
+        A wheelchair ramp can be permanent, semi-permanent or portable. Permanent ramps are designed to be
+        bolted or otherwise attached in place. Semi-permanent ramps rest on top of the ground or concrete pad
+        and are commonly used for the short term. Permanent and semi-permanent ramps are usually of aluminum,
+        concrete or wood. Portable ramps are usually aluminum and typically fold for ease of transport. Portable
+        ramps are primarily intended for home and building use but can also be used with vans to load an
+        unoccupied mobility device or to load an occupied mobility device when both the device and the passenger
+        are easy to handle.
+    """ .
+
+#
+# Properties
+#
+:isMobile a rdf:Property ;
+    :domainIncludes :Ramp ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isMobile" ;
+    rdfs:comment """
+        True if the ramp is removable or mobile, False if it is fixed. Many places have smaller steps at the
+        entrance, but provide a mobile ramp to compensate this when asked. This ramp is usually installed when
+        a visitor calls for assistance in advance, uses a designated doorbell, or when they are seen from the
+        inside.
+    """ .
+
+:incline a rdf:Property ;
+    :domainIncludes :Ramp ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "incline" ;
+    rdfs:comment """
+        Grade as calculated by rise / run or the tangent of the angle of inclination (e.g. '20%'), or given
+        as angle of the inclination (e.g. '11.3 degrees'). See Wikipedia for a definition.
+    """ .
+
+:connectedFloorLevels a rdf:Property ;
+    :domainIncludes :Ramp ;
+    :rangeIncludes :Text ;
+    rdfs:label "connectedFloorLevels" ;
+    rdfs:comment """
+        The connected floor levels in a multi-storey building, as list, if applicable. Since counting systems
+        vary internationally, the local system should be used where possible.
+    """ .
+
+:operationalStatus a rdf:Property ;
+    :domainIncludes :Ramp ;
+    :rangeIncludes :OperationalStatus ;
+    rdfs:label "operationalStatus" ;
+    rdfs:comment """
+        Describes current usability of the ramp. Can be used for real-time status updates.
+    """ .
+

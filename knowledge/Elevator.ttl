@@ -1,0 +1,70 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product > Vehicle > Elevator.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:Elevator a rdfs:Class ;
+    rdfs:subClassOf :Vehicle;
+    rdfs:label "Elevator" ;
+    :sameAs <https://dbpedia.org/page/Elevator> ;
+    :sameAs <https://www.wikidata.org/wiki/Q132911> ;
+    rdfs:comment """
+        Describes a physical elevator that transports people or goods vertically. If properties of the supertypeVehicle are used, they should describe the
+        elevator’s cabin, moving platform, or sling. If a cabin or platform is part of the elevator, it's width and depth properties should be included for
+        saccessibility.
+    """ .
+
+#
+# Properties
+#
+:door a rdf:Property ;
+    :domainIncludes :Elevator ;
+    :rangeIncludes :Door ;
+    rdfs:label "door" ;
+    rdfs:comment """
+        List containing descriptions of the elevator’s door(s).
+    """ .
+
+:hasDoorsInOppositeDirections a rdf:Property ;
+    :domainIncludes :Elevator ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasDoorsInOppositeDirections" ;
+    rdfs:comment """
+        True if the equipment has doors in opposite directions. Relevant for people using a wheelchair, rollator,
+        cargo bike or pushchair to know if they have to turn.
+    """ .
+
+:connectedFloorLevels a rdf:Property ;
+    :domainIncludes :Elevator ;
+    :rangeIncludes :Text ;
+    rdfs:label "connectedFloorLevels" ;
+    rdfs:comment """
+        The connected floor levels in a multi-storey building, as list, if applicable. Since counting systems
+        vary internationally, the local system should be used where possible.
+    """ .
+
+:operationalStatus a rdf:Property ;
+    :domainIncludes :Elevator ;
+    :rangeIncludes :OperationalStatus ;
+    rdfs:label "operationalStatus" ;
+    rdfs:comment """
+        Describes current usability of the facility. Can be used for real-time status updates.
+    """ .
+
+:alternativeWays a rdf:Property ;
+    :domainIncludes :Elevator ;
+    :rangeIncludes :Thing ;
+    rdfs:label "alternativeWays" ;
+    rdfs:comment """
+        If there are alternative routes to this elevator, they can be linked using this property.
+    """ .
+

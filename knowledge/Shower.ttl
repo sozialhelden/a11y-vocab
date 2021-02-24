@@ -1,0 +1,82 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Product > Shower.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/40
+#
+
+#
+# Classes
+#
+:Shower a rdfs:Class ;
+    rdfs:subClassOf :Product;
+    rdfs:label "Shower" ;
+    :sameAs <https://dbpedia.org/page/Shower> ;
+    :sameAs <https://www.wikidata.org/wiki/Q7863> ;
+    rdfs:comment """
+        A shower is a place in which a person bathes under a spray of typically warm
+        or hot water. Indoors, there is a drain in the floor. Most showers have
+        temperature, spray pressure and adjustable showerhead nozzle. The simplest
+        showers have a swivelling nozzle aiming down on the user, while more complex
+        showers have a showerhead connected to a hose that has a mounting bracket.
+        This allows the showerer to hold the showerhead by hand to spray the water at
+        different parts of their body. A shower can be installed in a small shower stall
+        or bathtub with a plastic shower curtain or door.
+    """ .
+
+#
+# Properties
+#
+:hasShowerSeat a rdf:Property ;
+    :domainIncludes :Shower ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasShowerSeat" ;
+    rdfs:comment """
+        True if the shower has a seat, False if not.
+    """ .
+
+:showerSeatIsFoldable a rdf:Property ;
+    :domainIncludes :Shower ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "showerSeatIsFoldable" ;
+    rdfs:comment """
+        True if the shower seat can be folded, False if not.
+    """ .
+
+:showerSeatIsRemovable a rdf:Property ;
+    :domainIncludes :Shower ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "showerSeatIsRemovable" ;
+    rdfs:comment """
+        True if the shower seat can be removed from the shower easily, False if not.
+    """ .
+
+:hasInShowerGrabBar a rdf:Property ;
+    :domainIncludes :Shower ;
+    :rangeIncludes :GrabBar ;
+    rdfs:label "hasInShowerGrabBar" ;
+    # ToDo comment anpassen
+    rdfs:comment """
+        True if has grab bars in the bathroom, false if not and undefined if unknown.
+    """ .
+
+:hasIntoShowerGrabBar a rdf:Property ;
+    :domainIncludes :Shower ;
+    :rangeIncludes :GrabBar ;
+    rdfs:label "hasIntoShowerGrabBar" ;
+    # ToDo comment anpassen
+    rdfs:comment """
+        True if there grab bars in the shower, false if not and undefined if unknown.
+    """ .
+
+:hasTransferSeat a rdf:Property ;
+    :domainIncludes :Shower ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasTransferSeat" ;
+    rdfs:comment """
+        True if the shower has a transfer seat, false if there is no transfer seat.
+    """ .

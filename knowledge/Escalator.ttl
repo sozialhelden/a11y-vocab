@@ -1,0 +1,74 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product > Vehicle > Escalator.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:Escalator a rdfs:Class ;
+    rdfs:subClassOf :Vehicle;
+    rdfs:label "Escalator" ;
+    :sameAs <https://dbpedia.org/page/Escalator> ;
+    :sameAs <https://www.wikidata.org/wiki/Q15003> ;
+    rdfs:comment """
+        An escalator is a moving staircase which carries people between floors of a building or structure.
+        It consists of a motor-driven chain of individually linked steps on a track which cycle on a pair of
+        tracks which keep them horizontal.
+    """ .
+
+:Stairlift a rdfs:Class ;
+    rdfs:subClassOf :Elevator;
+    rdfs:label "Stairlift" ;
+    :sameAs <https://dbpedia.org/page/Stairlift> ;
+    :sameAs <https://www.wikidata.org/wiki/Q1894866> ;
+    rdfs:comment """
+        A stair lift is a mechanical device for lifting people up and down stairs. For sufficiently wide
+        stairs, a rail is mounted to the treads of the stairs. A chair or lifting platform is attached to
+        the rail. A person gets onto the chair or platform and is lifted up or down the stairs by the chair
+        which moves along the rail.
+    """ .
+
+#
+# Properties
+#
+:connectedFloorLevels a rdf:Property ;
+    :domainIncludes :Escalator ;
+    :rangeIncludes :Text ;
+    rdfs:label "connectedFloorLevels" ;
+    rdfs:comment """
+        The connected floor levels in a multi-storey building, as list, if applicable. Since counting systems
+        vary internationally, the local system should be used where possible.
+    """ .
+
+:stairs a rdf:Property ;
+    :domainIncludes :Escalator ;
+    :rangeIncludes :Stairs ;
+    rdfs:label "stairs" ;
+    rdfs:comment """
+        Describes the escalator’s staircase. Relevant for passengers if an escalator is out of service, and
+        there is no alternative route.
+    """ .
+
+:handrails a rdf:Property ;
+    :domainIncludes :Escalator ;
+    :rangeIncludes :Handrails ;
+    rdfs:label "handrails" ;
+    rdfs:comment """
+        Provides information about the escalator’s handrails.
+    """ .
+
+:operationalStatus a rdf:Property ;
+    :domainIncludes :Escalator ;
+    :rangeIncludes :OperationalStatus	 ;
+    rdfs:label "operationalStatus" ;
+    rdfs:comment """
+        Describes current usability of the escalator. Can be used for real-time status updates.
+    """ .
+

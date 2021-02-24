@@ -1,0 +1,94 @@
+
+#
+# Properties
+#
+:count a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "count" ;
+    rdfs:comment """
+        Defines many wheelchair accessible parking lots are provided
+    """ .
+
+:distanceToEntrance a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "distanceToEntrance" ;
+    rdfs:comment """
+        How far away is the parking from the main entrance? If there is a separate wheelchair entrance, the
+        distance to this entrance MUST be used.
+    """ .
+
+:hasDedicatedSignage a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasDedicatedSignage" ;
+    rdfs:comment """
+        True if there is dedicated signage at all relevant turning points from the street to the parking,
+        false if not, undefined if this is unknown.
+    """ .
+
+:isLocatedInside a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isLocatedInside" ;
+    rdfs:comment """
+        True if the parking is inside a building or under a roof, false if not, undefined if unknown.
+    """ .
+
+:length a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "length" ;
+    rdfs:comment """
+        Length constraint of the parking lots.
+    """ .
+
+:location a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :Text ;
+    rdfs:label "location" ;
+    rdfs:comment """
+        Describes where the parking is located.
+    """ .
+
+:maxVehicleHeight a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "maxVehicleHeight" ;
+    rdfs:comment """
+        Maximal allowed vehicle height for users of this parking.
+    """ .
+
+:neededParkingPermits a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :Text ;
+    rdfs:label "neededParkingPermits" ;
+    rdfs:comment """
+        List of permit names that allow using this parking.
+    """ .
+
+:paymentBySpace a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "paymentBySpace" ;
+    rdfs:comment """
+        True if the parking has to be paid by space, false if not, undefined if unknown.
+    """ .
+
+:paymentByZone a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "paymentByZone" ;
+    rdfs:comment """
+        True if the parking has to be paid by parking zone, false if not, undefined if unknown.
+    """ .
+
+:width a rdf:Property ;
+    :domainIncludes :ParkingFacility ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "width" ;
+    rdfs:comment """
+        Width constraint of the parking lots.
+    """ .
+

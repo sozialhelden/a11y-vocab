@@ -1,0 +1,69 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Intangible > AnimalPolicy.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:AnimalPolicy a rdfs:Class ;
+    rdfs:subClassOf :Intangible;
+    rdfs:label "AnimalPolicy" ;
+    rdfs:comment """
+        Provides information about how the operators of an [[Organization]], [[Place]] or [[Service]] deal with
+        people accompanied by animals. This is relevant for people who need an assistance animal
+        (e.g. a guide dog), or travel with a pet.
+    """ .
+
+#
+# Properties
+#
+:allowsAnyDogs a rdf:Property ;
+    :domainIncludes :AnimalPolicy ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "allowsAnyDogs" ;
+    rdfs:comment """
+        True if the place allows visitors to bring dogs in general, False if bringing them is explicitly
+        prohibited (with exception of assistance dogs, if allowsAssistanceDogs is True).
+    """ .
+
+:allowsAssistanceDogs a rdf:Property ;
+    :domainIncludes :AnimalPolicy ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "allowsAssistanceDogs" ;
+    rdfs:comment """
+        True if the place allows visitors to bring assistance/guide dogs, False if bringing them is
+        explicitly prohibited.
+    """ .
+
+:allowsDogsOnlyWithMuzzle	a rdf:Property ;
+    :domainIncludes :AnimalPolicy ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "allowsDogsOnlyWithMuzzle" ;
+    rdfs:comment """
+        True if the place denies entry to visitors bringing a dogs without muzzles,
+        False if dogs without muzzles are explicitly allowed.
+    """ .
+
+:suppliesWaterForAnimals a rdf:Property ;
+    :domainIncludes :AnimalPolicy ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "suppliesWaterForAnimals" ;
+    rdfs:comment """
+        True if the place supplies water for accompanying animals, False if explicitly not.
+    """ .
+
+:allowsDogsOnlyWithLeash	a rdf:Property ;
+    :domainIncludes :AnimalPolicy ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "allowsDogsOnlyWithLeash" ;
+    rdfs:comment """
+        True if the place denies entry to visitors bringing a dogs without leash,
+        False if dogs without leash are explicitly allowed.
+    """ .

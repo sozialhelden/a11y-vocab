@@ -1,0 +1,131 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product > Door.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:Door a rdfs:Class ;
+    rdfs:subClassOf :Product;
+    rdfs:label "Door" ;
+    :sameAs <https://dbpedia.org/page/Door> ;
+    :sameAs <https://www.wikidata.org/wiki/Q36794> ;
+    rdfs:comment """
+        A door is a hinged or otherwise movable barrier that allows ingress into and egress from an enclosure.
+        The created opening in the wall is a doorway or portal. A door's essential and primary purpose is to
+        provide security by controlling access to the doorway (portal). Conventionally, it is a panel that fits
+        into the portal of a building, room, or vehicle. Doors are generally made of a material suited to the door's #
+        task. Doors are commonly attached by hinges, but can move by other means, such as slides or counterbalancing.
+        ([Wikipedia](https://en.wikipedia.org/wiki/Door))
+    """ .
+
+#
+# Properties
+#
+:isAlwaysOpen a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isAlwaysOpen" ;
+    rdfs:comment """
+        True if the door is always open, False if not.
+    """ .
+
+:isAutomatic a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isAutomatic" ;
+    rdfs:comment """
+        True if the door is fully automatic, False if it has to be opened or closed manually.
+    """ .
+
+:isSelfClosing	a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isSelfClosing" ;
+    rdfs:comment """
+        True if the door closes automatically, False if it has to be closed manually.
+    """ .
+
+:isRevolving a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isRevolving" ;
+    rdfs:comment """
+        True if the door is a revolving door, False if not.
+    """ .
+
+:isTurnstile a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isTurnstile" ;
+    rdfs:comment """
+        True if the door is a turnstile, False if not.
+    """ .
+
+:isTransparent a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isTransparent" ;
+    rdfs:comment """
+        True if the door is made of transparent material, False if not. Relevant for people with visual impairments.
+    """ .
+
+:openingForce a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "openingForce" ;
+    rdfs:comment """
+        Force needed to open the door completely, given in lbs. This is relevant for accessibility - Interior
+        doors should require no more than 5 lbs. of force to open.
+    """ .
+
+:closingSpeed a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "closingSpeed" ;
+    rdfs:comment """
+        Speed taken for the door from its full open position to the degree where the latch phase begins.
+        Given in degrees (for doors with a rotational axis) or distance (for linear doors) per time.
+    """ .
+
+:latchingSpeed a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "latchingSpeed" ;
+    rdfs:comment """
+        Speed taken for the door to close and latch shut over the last degrees of its closing phase.
+        Given in degrees (for doors with a rotational axis) or distance (for linear doors) per time.
+    """ .
+
+:turningSpaceRadius a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "turningSpaceRadius" ;
+    rdfs:comment """
+        Turning space available for using this door. Relevant for wheelchair and rollator accessibility.
+        If this attribute is given, it should at least have a minValue property.
+    """ .
+
+:needsPhysicalKeyOrCard a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :Text ;
+    rdfs:label "needsPhysicalKeyOrCard" ;
+    rdfs:comment """
+        Standardized key needed to access this place, e.g. 'radarPhysicalKey' for a RADAR key, or 'euroPhysicalKey' for a Euro key.
+    """ .
+
+:operationalStatus a rdf:Property ;
+    :domainIncludes :Door ;
+    :rangeIncludes :OperationalStatus ;
+    rdfs:label "operationalStatus" ;
+    rdfs:comment """
+        Describes if the door is currently usable. Can be used for real-time status updates.
+    """ .
+

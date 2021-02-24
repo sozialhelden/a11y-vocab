@@ -1,0 +1,64 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Product > WashBasin.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/40
+#
+
+#
+# Classes
+#
+:WashBasin a rdfs:Class ;
+    rdfs:subClassOf :Product;
+    rdfs:label "WashBasin" ;
+    :sameAs <https://dbpedia.org/page/Sink> ;
+    :sameAs <https://www.wikidata.org/wiki/Q140565> ;
+    rdfs:comment """
+        A sink — also known by other names including sinker, washbowl, hand basin,
+        and wash basin—is a bowl-shaped plumbing fixture used for washing hands,
+        dishwashing, and other purposes. Sinks have taps (faucets) that supply hot and
+        cold water and may include a spray feature to be used for faster rinsing.
+        They also include a drain to remove used water; this drain may itself include a
+        strainer and/or shut-off device and an overflow-prevention device.
+        Sinks may also have an integrated soap dispenser.
+    """ .
+
+#
+# Properties
+#
+:topHeight a rdf:Property ;
+    :domainIncludes :WashBasin ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "topHeight" ;
+    rdfs:comment """
+        Defines at which height is the wash basin's top
+    """ .
+
+:bottomClearance a rdf:Property ;
+    :domainIncludes :WashBasin ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "bottomClearance" ;
+    rdfs:comment """
+        How high is the space below the basin? This is relevant for
+        people using a wheelchair.
+    """ .
+
+:hasTransferSeat a rdf:Property ;
+    :domainIncludes :WashBasin ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasTransferSeat" ;
+    rdfs:comment """
+        True if the wash basin has a transfer seat, false if there is no transfer seat.
+    """ .
+
+:heightAdjustable a rdf:Property ;
+    :domainIncludes :WashBasin ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "heightAdjustable" ;
+    rdfs:comment """
+        True if the wash basin is height adjustable, false if not.
+    """ .

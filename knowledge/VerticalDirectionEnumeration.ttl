@@ -1,0 +1,32 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Property > identifier > verticalDirection.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:VerticalDirectionEnumeration a rdfs:Class ;
+    rdfs:subClassOf :Enumeration ;
+    rdfs:label "VerticalDirectionEnumeration" ;
+    rdfs:comment """
+        Describes a vertical direction up or down. Use this when you want to give information about up or down.
+    """ .
+
+:VerticalDirectionUp a :VerticalDirectionEnumeration ;
+    rdfs:label "VerticalDirectionUp" ;
+    rdfs:comment """
+        Use this when the vertical direction is up.
+    """ .
+
+:VerticalDirectionDown a :VerticalDirectionEnumeration ;
+    rdfs:label "VerticalDirectionDown" ;
+    rdfs:comment """
+        Use this when the vertical direction is down.
+    """ .

@@ -1,0 +1,23 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Intangible > Service.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Properties
+#
+:hasUserAnimalPolicy a rdf:Property ;
+    :domainIncludes :Service ;
+    :rangeIncludes :AnimalPolicy ;
+    rdfs:label "hasUserAnimalPolicy" ;
+    rdfs:comment """
+        Describes how the operators of this service deal with users of the service accompanied by animals.
+        This is relevant for people who need an assistance animal (e.g. a guide dog), or travel with a pet.
+    """ .
+

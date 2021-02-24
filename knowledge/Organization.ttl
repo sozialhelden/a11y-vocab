@@ -1,0 +1,24 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Organization.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Properties
+#
+:hasEmployeeAnimalPolicy a rdf:Property ;
+    :domainIncludes :Organization ;
+    :rangeIncludes :AnimalPolicy ;
+    rdfs:label "hasEmployeeAnimalPolicy" ;
+    rdfs:comment """
+        Describes how this organization deals with employees accompanied by animals.
+        This is relevant for people who need an assistance animal (e.g. a guide dog),
+        and work at the organization.
+    """ .
+

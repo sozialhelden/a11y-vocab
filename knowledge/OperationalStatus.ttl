@@ -1,0 +1,85 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Intangible > OperationalStatus.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:OperationalStatus a rdfs:Class ;
+    rdfs:subClassOf :Intangible;
+    rdfs:label "OperationalStatus" ;
+    rdfs:comment """
+        Describes the current operational status of a [[Thing]].
+    """ .
+
+#
+# Properties
+#
+:facility a rdf:Property ;
+    :domainIncludes :OperationalStatus ;
+    :rangeIncludes :Thing ;
+    rdfs:label "facility" ;
+    rdfs:comment """
+        Reference to the facility that has the status described by this resource.
+    """ .
+
+:isWorking a rdf:Property ;
+    :domainIncludes :OperationalStatus ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isWorking" ;
+    rdfs:comment """
+        Allows live status update. True if the equipment is currently usable, False if it's out of service.
+    """ .
+
+:timestamp a rdf:Property ;
+    :domainIncludes :OperationalStatus ;
+    :rangeIncludes :Date ;
+    rdfs:label "timestamp" ;
+    rdfs:comment """
+        Describes when the live status of this equipment was last determined. Important to determine if a
+        status information is outdated.
+    """ .
+
+:sources a rdf:Property ;
+    :domainIncludes :OperationalStatus ;
+    :rangeIncludes :URL ;
+    rdfs:label "sources" ;
+    rdfs:comment """
+        Reference to sources for this status information.
+    """ .
+
+:alternatives a rdf:Property ;
+    :domainIncludes :OperationalStatus ;
+    :rangeIncludes :HowTo ;
+    rdfs:label "alternatives" ;
+    rdfs:comment """
+        One or more HowTos that describe alternative ways a user can take when they can’t use the facility
+        (for excample because it is out of order).
+    """ .
+
+:outOfOrderReason a rdf:Property ;
+    :domainIncludes :OperationalStatus ;
+    :rangeIncludes :Text ;
+    rdfs:label "outOfOrderReason" ;
+    rdfs:comment """
+        If the equipment is out of order, this contains a description that can provide more information
+        about causes of and workarounds for the current outage (e.g. 'in maintenance until December 20, 2025.
+        Please use the east entrance instead.)
+    """ .
+
+:currentVerticalDirection a rdf:Property ;
+    :domainIncludes :OperationalStatus ;
+    :rangeIncludes :verticalDirection ;
+    rdfs:label "currentVerticalDirection" ;
+    rdfs:comment """
+        Current vertical direction ('up' or 'down'). Can be used to provide real-time updates, e.g. for
+        Elevator or Escalator.
+    """ .
+

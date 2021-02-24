@@ -1,0 +1,80 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product > Stairs.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:Stairs a rdfs:Class ;
+    rdfs:subClassOf :Product;
+    rdfs:label "Stairs" ;
+    :sameAs <https://dbpedia.org/page/Stairs> ;
+    :sameAs <https://www.wikidata.org/wiki/Q12511> ;
+    rdfs:comment """
+        A stairway, staircase, stairwell, flight of stairs, or simply stairs, is a construction designed to
+        bridge a large vertical distance by dividing it into smaller vertical distances, called steps.
+        Stairs may be straight, round, or may consist of two or more straight pieces connected at angles.
+        Special types of stairs include escalators and ladders. Some alternatives to stairs are elevators
+        (also called lifts), stairlifts and inclined moving walkways.
+    """ .
+
+#
+# Properties
+#
+:stepHeight a rdf:Property ;
+    :domainIncludes :Stairs ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "stepHeight" ;
+    rdfs:comment """
+        Indicates how high the steps if these stairs are (can be a range).
+    """ .
+
+:hasAntiSlipNosing a rdf:Property ;
+    :domainIncludes :Stairs ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasAntiSlipNosing" ;
+    rdfs:comment """
+        True if all relevant steps are coated with anti-slip material, False if not.
+    """ .
+
+:hasHighContrastNosing a rdf:Property ;
+    :domainIncludes :Stairs ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasHighContrastNosing" ;
+    rdfs:comment """
+        True if all relevant steps have a visually recognizable high contrast nosing, False if not.
+    """ .
+
+:connectedFloorLevels a rdf:Property ;
+    :domainIncludes :Stairs ;
+    :rangeIncludes :Text ;
+    rdfs:label "connectedFloorLevels" ;
+    rdfs:comment """
+        The connected floor levels in a multi-storey building, as list, if applicable. Since counting systems
+        vary internationally, the local system should be used where possible.
+    """ .
+
+:operationalStatus a rdf:Property ;
+    :domainIncludes :Stairs ;
+    :rangeIncludes :OperationalStatus ;
+    rdfs:label "operationalStatus" ;
+    rdfs:comment """
+        Describes current usability of the stairs. Can be used for real-time status updates.
+    """ .
+
+:incline a rdf:Property ;
+    :domainIncludes :Stairs ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "incline" ;
+    rdfs:comment """
+        Grade as calculated by rise / run or the tangent of the angle of inclination (e.g. '20%'), or given
+        as angle of the inclination (e.g. '11.3 degrees'). See Wikipedia for a definition.
+    """ .
+

@@ -1,0 +1,40 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Property > identifier > PhysicalKey.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:PhysicalKeyEnumeration a rdfs:Class ;
+    rdfs:subClassOf :Enumeration ;
+    rdfs:label "PhysicalKeyEnumeration" ;
+    :sameAs <https://dbpedia.org/property/key> ;
+    :sameAs <https://www.wikidata.org/wiki/Q132041> ;
+    rdfs:comment """
+        Describes the different types of access keys.
+    """ .
+
+:PhysicalKeyRadar a :PhysicalKeyEnumeration ;
+    rdfs:label "PhysicalKeyRadar" ;
+    rdfs:comment """
+        A radar key is a large, silver-coloured skeleton key that opens more than 10,000 locked, disabled
+        toilets in the UK. The Radar Key Scheme enables these disabled toilets to be locked to prevent
+        vandalism and misuse, while also being readily available to those who really need them.
+    """ .
+
+:PhysicalKeyEuro a :PhysicalKeyEnumeration ;
+    rdfs:label "PhysicalKeyEuro" ;
+    :sameAs <https://www.wikidata.org/wiki/Q1378261> ;
+    rdfs:comment """
+        Euro key is a locking system which enables people with physical disabilities to access handicapped
+        facilities free of charge. For example handicapped elevators and ramps, public toilets at motorways,
+        train stations, in pedestrian zones, shopping centers, museums or public authorities etc.
+    """ .
+

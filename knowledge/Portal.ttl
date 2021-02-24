@@ -1,0 +1,95 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Place > Portal.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+
+#
+# Classes
+#
+:Portal a rdfs:Class ;
+    rdfs:subClassOf :Place;
+    rdfs:label "Portal" ;
+    :sameAs <https://www.wikidata.org/wiki/Q854429> ;
+    rdfs:comment """
+        Describes a physical entrance to a [[Place]].
+        If a [[Thing]] is used as an entrance or exit, this type can be combined as multi-type entity with other types like [[Door]], [[Elevator]], [[Escalator]], or [[Ramp]].
+        An [[PortalisMainPortal]] SHOULD have a name property with the name of the entrance if there are multiple entrances to the same place.
+        If one or more physical sign(s) exist for the entrance, the value of name SHOULD correspond to what is readable on the sign(s).
+    """ .
+
+#
+# Properties
+#
+:isMainPortal a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isMainPortal" ;
+    rdfs:comment """
+        True if this is the designated main entrance/exit for the associated place, False if not.
+    """ .
+
+:isEntrance a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isEntrance" ;
+    rdfs:comment """
+        True if this resource can be used by visitors to enter the Place it is contained in, False if not.
+    """ .
+
+:isExit a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isExit" ;
+    rdfs:comment """
+        True if this resource can be used by visitors to exit the Place it is contained in, False if not.
+    """ .
+
+:origin a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :Place, :Thing ;
+    rdfs:label "origin" ;
+    rdfs:comment """
+        The Place or Thing from which this Portal leads to somewhere else. Use together with the
+        isUnidirectional property.
+    """ .
+
+:destination a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :Place, :Thing ;
+    rdfs:label "destination" ;
+    rdfs:comment """
+        The Place or Thing to which this Portal leads. Use together with the isUnidirectional property.
+    """ .
+
+:isUnidirectional a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isUnidirectional" ;
+    rdfs:comment """
+        True if users can only traverse this resource in one direction, False if it can by explicitly used
+        bidirectionally. If set to True, the order of origin and destination describes the allowed traversal
+        direction.
+    """ .
+
+:groundSurface a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :GroundSurface ;
+    rdfs:label "groundSurface" ;
+    rdfs:comment """
+        Describes the ground surface traversed when using this entrance or exit. If different surfaces exist,
+        this should describe the worst one for accessibility.
+    """ .
+
+:operationalStatus a rdf:Property ;
+    :domainIncludes :Portal ;
+    :rangeIncludes :OperationalStatus ;
+    rdfs:label "operationalStatus" ;
+    rdfs:comment """
+        Describes current usability of the entrance/exit. Can be used for real-time status updates.
+    """ .
+

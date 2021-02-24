@@ -1,0 +1,30 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product > Vehicle.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Properties
+#
+:mobilityService a rdf:Property ;
+    :domainIncludes :Vehicle ;
+    :rangeIncludes :MobilityService ;
+    rdfs:label "mobilityService" ;
+    rdfs:comment """
+        Contains accessibility service information for using the vehicle.
+    """ .
+
+:operationalStatus a rdf:Property ;
+    :domainIncludes :Vehicle ;
+    :rangeIncludes :OperationalStatus ;
+    rdfs:label "operationalStatus" ;
+    rdfs:comment """
+        Describes current usability of the vehicle. Can be used for real-time status updates.
+    """ .
+

@@ -9,9 +9,12 @@
 # @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
 #
 
+#
+# Properties
+#
 :hasEntrance a rdf:Property ;
     :domainIncludes :Place ;
-    :rangeIncludes :EntranceOrExit ;
+    :rangeIncludes :Portal ;
     rdfs:label "hasEntrances" ;
     rdfs:comment """
         Describes the entrance(s) and exit(s) from/to this place.
@@ -19,9 +22,29 @@
 
 :hasGroundSurface a rdf:Property ;
     :domainIncludes :Place ;
-    :rangeIncludes :GroundSurfaceEnumeration ;
+    :rangeIncludes :GroundSurface ;
     rdfs:label "hasGroundSurface" ;
     rdfs:comment """
         Describes the ground surface at this place.
-        This is relevant for accessibility.
+        This is relevant for vehicle mobility and accessibility for people with mobility impairments.
     """ .
+
+:hasVisitorAnimalPolicy a rdf:Property ;
+    :domainIncludes :Place ;
+    :rangeIncludes :AnimalPolicy ;
+    rdfs:label "hasVisitorAnimalPolicy" ;
+    rdfs:comment """
+        Describes how the operators of this place deal with visitors accompanied by animals.
+        This is relevant for people who need an assistance animal (e.g. a guide dog), or travel with a pet.
+    """ .
+
+:turningSpaceInside a rdf:Property ;
+    :domainIncludes :Place ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "turningSpaceInside" ;
+    rdfs:comment """
+        Describes how wide is the space inside that is usable for turning.
+        If given, the value SHOULD have a minValue property.
+        This is relevant for wheelchair accessibility, especially for users of electric wheelchairs.
+    """ .
+

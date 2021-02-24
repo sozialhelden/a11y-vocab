@@ -39,12 +39,40 @@
     :sameAs <http://live.dbpedia.org/page/Urinal> ;
     :sameAs <https://www.wikidata.org/wiki/Q152285> ;
     rdfs:comment """
-        A more specific type of [[Toilet]] for standing use and a device in which to urinate while standing ([Wikidata](https://www.wikidata.org/wiki/Q152285)).
+        A more specific type of [[Toilet]] for standing use and a device in which to urinate while
+        standing ([Wikidata](https://www.wikidata.org/wiki/Q152285)).
     """ .
+
+:SeatedToilet a rdfs:Class ;
+    rdfs:subClassOf :Toilet;
+    rdfs:label "SeatedToilet" ;
+    :sameAs <http://live.dbpedia.org/page/Urinal> ;
+    :sameAs <https://www.wikidata.org/wiki/Q152285> ;
+    rdfs:comment """
+        A more specific type of [[Toilet]] for standing use and a device in which to urinate while
+        standing ([Wikidata](https://www.wikidata.org/wiki/Q152285)).
+    """ .
+
 
 #
 # Properties
 #
+:isPortable a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isPortable" ;
+    rdfs:comment """
+        Denotes a more specific type of Toilet, e.g. used on festivals and construction sites
+        (see https://en.wikipedia.org/wiki/Portable_toilet).
+    """ .
+
+:hasWaterSeal a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasWaterSeal" ;
+    rdfs:comment """
+        True if the toilet has a water seal, False if not.
+    """ .
 
 :spaceOnUsersLeftSide a rdf:Property ;
     :domainIncludes :Toilet ;
@@ -54,3 +82,73 @@
         Denotes how much space is on the left side of the user (from their perspective while use).
         This is relevant for accessibility.
     """ .
+
+:spaceOnUsersRightSide a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "spaceOnUsersRightSide" ;
+    rdfs:comment """
+        How much space is on the right side of the user.
+        This is relevant for people with mobility impairments.
+    """ .
+
+:spaceInFront a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "spaceInFront" ;
+    rdfs:comment """
+        How much space is on the front of the user.
+        This is relevant for people with mobility impairments.
+    """ .
+
+:usageHeight a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "usageHeight" ;
+    rdfs:comment """
+        Indicates the distance of the toilet bowl opening or sitting height to the floor, if applicable.
+        This is relevant for people with mobility impairments.
+    """ .
+
+:hasGrabBars a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :GrabBar ;
+    rdfs:label "hasGrabBars" ;
+    # ToDo comment anpassen
+    rdfs:comment """
+        True if the toilet has a pair of grab bars, or a single grab bar on one side,
+        False if there is no grab rail.
+    """ .
+
+:hasTransferSeat a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasTransferSeat" ;
+    rdfs:comment """
+        True if the toilet has a transfer seat, false if there is no transfer seat.
+    """ .
+
+:hasHeightAdjustableNursingCouch a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasHeightAdjustableNursingCouch" ;
+    rdfs:comment """
+        True if the toilet has a height adjustable nursing couch, false if not.
+    """ .
+
+:hasElectricCeilingHoist a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasElectricCeilingHoist" ;
+    rdfs:comment """
+        True if the toilet has a has an electric ceiling hoist, false if not.
+    """ .
+
+:hasAirtightNappyPail a rdf:Property ;
+    :domainIncludes :Toilet ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "hasAirtightNappyPail" ;
+    rdfs:comment """
+        True if the toilet has an airtight nappy pail, false if not.
+    """ .
+

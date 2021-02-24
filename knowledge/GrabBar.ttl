@@ -1,0 +1,62 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > Product > GrabBar.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:GrabBar a rdfs:Class ;
+    rdfs:subClassOf :Product;
+    rdfs:label "GrabBar" ;
+    rdfs:comment """
+        Grab bars are safety devices designed to enable a person to maintain balance, lessen fatigue while
+        standing, hold some of their weight while maneuvering, or have something to grab onto in case of a
+        slip or fall. A caregiver may use a grab bar to assist with transferring a patient from one place to
+        another. A worker may use a grab bar to hold on to as he or she climbs, or in case of a fall.
+    """ .
+
+#
+# Properties
+#
+:isOnUsersLeftSide a rdf:Property ;
+    :domainIncludes :GrabBar ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isOnUsersLeftSide" ;
+    rdfs:comment """
+        True if there is a grab bar on left side(from the perspective of somebody using the toilet),
+        false if not, undefined if condition is unknown.
+    """ .
+
+:isOnUsersRightSide a rdf:Property ;
+    :domainIncludes :GrabBar ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isOnUsersRightSide" ;
+    rdfs:comment """
+        True if there is a grab bar on right side(from the perspective of somebody using the toilet),
+        false if not, undefined if condition is unknown.
+    """ .
+
+:heightFromFloor a rdf:Property ;
+    :domainIncludes :GrabBar ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "heightFromFloor" ;
+    rdfs:comment """
+        Indicates the grab bar height at the position where they are meant to be held,
+        measured as distance from the floor.
+    """ .
+
+:isFoldable a rdf:Property ;
+    :domainIncludes :GrabBar ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isFoldable" ;
+    rdfs:comment """
+        True if it is foldable, False if it is fixed (not foldable)
+    """ .
+

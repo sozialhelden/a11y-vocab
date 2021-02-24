@@ -12,7 +12,7 @@ jobs:
       - name: Validate
         uses: vemonet/jena-riot-action@v3.14
         with:
-          input: knowledge/EntranceOrExit.ttl
+          input: knowledge/Portal.ttl
 
       - name: Validate
         uses: vemonet/jena-riot-action@v3.14

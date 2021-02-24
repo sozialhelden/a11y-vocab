@@ -1,0 +1,355 @@
+@prefix : <https://schema.org/> .
+@prefix todo: <https://todo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#
+# This file contains information about Thing > GroundSurface.
+#
+# @see https://github.com/schemaorg/suggestions-questions-brainstorming/issues/39
+#
+
+#
+# Classes
+#
+:GroundSurfaceEnumeration a rdfs:Class ;
+    rdfs:subClassOf :Enumeration ;
+    rdfs:label "GroundSurfaceEnumeration" ;
+    :sameAs <http://live.dbpedia.org/page/Surface> ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Key:surface> ;
+    rdfs:comment """
+        Describes the quality of a physical ground surface.
+        Use this to describe road or sidewalk conditions, or to provide indoor accessibility information.
+    """ .
+
+:GroundSurfacePaved a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfacePaved" ;
+    rdfs:comment """
+        A feature that is predominantly paved; i.e., it is covered with paving stones, concrete or bitumen.
+        This value gives only a rough description; use a more precise value if possible.
+    """ .
+
+:GroundSurfaceAsphalt a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceAsphalt" ;
+    :sameAs <http://live.dbpedia.org/page/Asphalt> ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt> ;
+    rdfs:comment """
+       Short for asphalt concrete - mineral aggregate bound by asphalt. Most such features are tagged as
+       paved without specifying exact surface.
+    """ .
+
+:GroundSurfaceConcrete a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceConcrete" ;
+    :sameAs <https://dbpedia.org/page/Concrete> ;
+    :sameAs <https://www.wikidata.org/wiki/Q22657> ;
+    rdfs:comment """
+        Cement based concrete, forming a large surface, typically cast in place and may have predetermined
+        breaking joints. For pre-fabricated plates, please use concrete:plates or concrete:lanes if you know
+        how the concrete is laid out and one of these tags fits.
+    """ .
+
+:GroundSurfaceConcreteLanes a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceConcreteLanes" ;
+    :sameAs <https://dbpedia.org/page/Lane> ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete:lanes> ;
+    rdfs:comment """
+        Long, narrow concrete elements for a two-tracked vehicle (motorcars) so that the tires always hit the
+        concrete. There might be sand, ground, grass, pavers, asphalt, etc. in between them. Note that if you tag
+        a single-tracked way you just use concrete, since there are no lanes.
+    """ .
+
+:GroundSurfaceConcretePlates a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceConcretePlates" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete:plates> ;
+    rdfs:comment """
+        Heavy duty plates chained closely together on the short side. Might have tar or sand in between the connections.
+    """ .
+
+:GroundSurfacePavingStones a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfacePavingStones" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones> ;
+    rdfs:comment """
+        A relatively smooth surface paved with artificial blocks (block pavers, bricks) or natural stones
+        (flagstones), with a flat top. The gaps between individual paving stones are very narrow, either
+        because the stones have a perfectly regular shape (rectangular, or any surface-filling shape) or
+        because they have been carefully selected, fitted and placed in order to form an even, closed surface.
+    """ .
+
+:GroundSurfaceSett a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceSett" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett> ;
+    rdfs:comment """
+        Sett paving, formed from natural stones cut to a regular shape. The stones do not cover the surface
+        completely, unlike paving_stones.
+    """ .
+
+:GroundSurfaceUnhewnCobblestone a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceUnhewnCobblestone" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunhewn_cobblestone> ;
+    rdfs:comment """
+        Raw cobblestone of natural, uncut, rounded stones. Unlike pebblestone firmly connected to the ground.
+    """ .
+
+:GroundSurfaceCobblestone a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceCobblestone" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone> ;
+    rdfs:comment """
+        Generic value for cobblestone in the colloquial sense. It's better to use a more precise value
+        such as sett or unhewn_cobblestone
+    """ .
+
+:GroundSurfaceMetal a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceMetal" ;
+    rdfs:comment """
+        Used for metal surfaced bridges, or for temporary tracks over fields for normal road vehicles
+        or site traffic.
+    """ .
+
+:GroundSurfaceWood a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceWood" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwood> ;
+    rdfs:comment """
+        Used for wood surfaced bridges, plank walkways, and garden decking
+    """ .
+
+:GroundSurfaceSteppingStones a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceSteppingStones" ;
+    :sameAs <https://www.wikidata.org/wiki/Q1415899> ;
+    rdfs:comment """
+        Stones or plates individually arranged in a row, allowing to walk on, surrounded by an unpaved
+        medium such as grass or water
+    """ .
+
+:GroundSurfaceUnpaved a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceUnpaved" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunpaved> ;
+    rdfs:comment """
+        A feature that is predominantly unsealed (unpaved); i.e., it has a loose covering ranging from
+        compacted stone chippings to earth. Unpaved roads may, in aerial imagery, show evidence of water
+        along their course; in such circumstances, the waterway should not be tagged as a stream, though
+        it might appear as such. This value gives only a rough description; use a more precise value if
+        possible.
+    """ .
+
+:GroundSurfaceCompacted a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceCompacted" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcompacted> ;
+    rdfs:comment """
+        A mixture of larger (e.g., gravel) and smaller (e.g., sand) parts, compacted (e.g., with a roller),
+        so the surface is more stable than loose gravel. Used, for example, for park paths, better tracks,
+        some service ways, … Best sort of ways below paving with asphalt, concrete, paving stones. Sometimes
+        known as water-bound macadam. Mixture and compacting leads to more grip and stability.
+    """ .
+
+:GroundSurfaceFineGravel a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceFineGravel" ;
+    rdfs:comment """
+        A multilayer pavement with a stone or gravel basis and a topmost surface of firm, granular grit,
+        basalt or quartz, as invented by the Roman empire. Easy to walk, jog, cycle or ride on. In hilly
+        areas mostly with drainage channels and concave cross-section for proper water shedding. Motorized
+        vehicles will not move stones if the way is maintained properly, and bicycles tires will not leave
+        any imprints at least in dry weather. If the topmost surface is eroded or loose gravel aggravate
+        please use gravel instead.
+    """ .
+
+:GroundSurfaceGravel a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceGravel" ;
+    :sameAs <https://dbpedia.org/page/Gravel> ;
+    :sameAs <https://www.wikidata.org/wiki/Q133833> ;
+    rdfs:comment """
+        Broken/crushed rock with sharp edges, known as ballast on railways. Usually loosely arranged. Typical
+        size for road and surface construction range between 4 and 8 cm. Gravel can be used as a ground-layer
+        for compacted.
+    """ .
+
+:GroundSurfaceRock a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceRock" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Drock> ;
+    rdfs:comment """
+        Exposed rock or big pieces of rock used to improve path quality. Typically in mountainous areas.
+    """ .
+
+:GroundSurfacePebblestone a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfacePebblestone" ;
+    rdfs:comment """
+        Pebbles are stones rounded by waves or river flow. Typical size range from 2 to 8 cm. Describing a
+        surface in OSM they are loosely arranged. Like gravel pebbles can be used as a building part of compacted.
+    """ .
+
+:GroundSurfaceGround a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceGround" ;
+    rdfs:comment """
+        No special surface, the ground itself has marks of human or animal usage. This value gives only a rough
+        description; if possible, use a more precise value such as grass, clay, sand, earth, gravel or pebblestone.
+    """ .
+
+:GroundSurfaceDirt a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceDirt" ;
+    :sameAs <http://live.dbpedia.org/page/Dirt> ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Ddirt> ;
+    rdfs:comment """
+        Probably very similar to ground. Like all this, it is prone to erosion and therefore often uneven.
+        Gravel is sometimes mistakenly called dirt. Some compacted surfaces are sometimes called 'dirt' too,
+        please consider the definition of compacted.
+    """ .
+
+:GroundSurfaceEarth a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceEarth" ;
+    :sameAs <https://www.wikidata.org/wiki/Q2488752> ;
+    rdfs:comment """
+        Probably a type of ground. Usually natural, but may also apply to artificial preparations of soil.
+        Duplicate of dirt.
+    """ .
+
+:GroundSurfaceGrass a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceGrass" ;
+    :sameAs <https://www.wikidata.org/wiki/Q643352> ;
+    rdfs:comment """
+        Grass covered ground. Mostly nice to walk. May turn into surface=dirt or become overgrown and disappear.
+    """ .
+
+:GroundSurfaceGrassPaver a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceGrassPaver" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass_paver> ;
+    rdfs:comment """
+        A sort of permeable paving using regular cell structure, where the voids in this structure enable
+        rainwater to drain into the ground and the structure itself increases the load bearing capability.
+        Often used for parking lots or infrequent used ways like for emergency-vehicles.
+    """ .
+
+:GroundSurfaceMud a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceMud" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dmud> ;
+    rdfs:comment """
+        Similar to ground but most of the year wet which gives a soft ground with low carrying capacity.
+        Mostly found on wetland like swamps or in tidal areas. Sometimes also found on slopes draining onto a way.
+    """ .
+
+:GroundSurfaceSand a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceSand" ;
+    :sameAs <https://dbpedia.org/page/Sand> ;
+    :sameAs <https://www.wikidata.org/wiki/Q34679> ;
+    rdfs:comment """
+        Small to very small fractions (less than 2mm) of rock.
+    """ .
+
+:GroundSurfaceWoodchips a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceWoodchips" ;
+    :sameAs <https://www.wikidata.org/wiki/Q663690> ;
+    rdfs:comment """
+        Woodchips as a surface
+    """ .
+
+:GroundSurfaceSnow a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceSnow" ;
+    :sameAs <https://dbpedia.org/page/Snow> ;
+    :sameAs <https://www.wikidata.org/wiki/Q7561> ;
+    rdfs:comment """
+        Winter roads surfaced with compacted snow.
+    """ .
+
+:GroundSurfaceIce a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceIce" ;
+    :sameAs <https://dbpedia.org/page/Ice> ;
+    :sameAs <https://www.wikidata.org/wiki/Q23392> ;
+    rdfs:comment """
+        Ice roads, winter roads
+    """ .
+
+:GroundSurfaceSalt a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceSalt" ;
+    :sameAs <https://www.wikidata.org/wiki/Q12370> ;
+    rdfs:comment """
+        Dry salt lakes
+    """ .
+
+:GroundSurfaceClay a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceClay" ;
+    :sameAs <https://dbpedia.org/page/Clay> ;
+    :sameAs <https://www.wikidata.org/wiki/Q42302> ;
+    rdfs:comment """
+        Most common on tennis courts. Sometimes used for other sports: soccer, athletic tracks, boules, etc.
+    """ .
+
+:GroundSurfaceTartan a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceTartan" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan> ;
+    rdfs:comment """
+        A synthetic, all-weather surface typically used in running and other sport tracks. Although Tartan
+        is a trademark, it is used as a generic term due to its widespread usage.
+    """ .
+
+:GroundSurfaceArtificialTurf a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceArtificialTurf" ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dartificial_turf> ;
+    rdfs:comment """
+        An all-weather surface made from synthetic fibres to look and feel like natural grass. Often used
+        for tracks and pitches of sports such as football, baseball, etc.
+    """ .
+
+:GroundSurfaceAcrylic a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceAcrylic" ;
+    :sameAs <https://dbpedia.org/page/Acrylic_resin> ;
+    :sameAs <https://wiki.openstreetmap.org/wiki/Tag:surface%3Dacrylic> ;
+    rdfs:comment """
+        An artificial surface covered with acrylic resin-bound coating. Often used for tennis courts,
+        basketball courts, etc. Prominent brands include: DecoTurf, GreenSet and so on.
+    """ .
+
+:GroundSurfaceMetalGrid a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceMetalGrid" ;
+    :sameAs <https://www.wikidata.org/wiki/Q58328221> ;
+    rdfs:comment """
+        Metal grids are often used as a surface on industrial-style bridges or stairs. When wet, the surface
+        can become very slippery, especially for bikes. The surface can also be unsuitable for dogs, due to
+        the sharp edges and the look-through effect.
+    """ .
+
+:GroundSurfaceCarpet a :GroundSurfaceEnumeration ;
+    rdfs:label "GroundSurfaceCarpet" ;
+    :sameAs <https://dbpedia.org/page/Carpet> ;
+    :sameAs <https://www.wikidata.org/wiki/Q29167278> ;
+    rdfs:comment """
+        Carpet may be used for some sport courts such as indoor tennis courts.
+    """ .
+
+#
+# Properties
+#
+:isEven a rdf:Property ;
+    :domainIncludes :GroundSurface ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isEven" ;
+    rdfs:comment """
+        True if the surface is even and not plastered, False if not even or plastered.
+    """ .
+
+:isLevel a rdf:Property ;
+    :domainIncludes :GroundSurface ;
+    :rangeIncludes :Boolean ;
+    rdfs:label "isLevel" ;
+    rdfs:comment """
+        True if the described object can be used step-free and the ground/floor is level, False if not
+        (e.g. if users have to take a step to use the main functionality). Can be True even if the
+        ground/floor is not perfectly even but plastered, for example - for this case, you can provide a
+        surface property instead.
+    """ .
+
+:surface a rdf:Property ;
+    :domainIncludes :GroundSurface ;
+    :rangeIncludes :Text ;
+    rdfs:label "surface" ;
+    rdfs:comment """
+        Rating of surface/sidewalk conditions. Use strings from
+        https://wiki.openstreetmap.org/wiki/Key:surface as values, for example.
+    """ .
+
+:slopeAngle a rdf:Property ;
+    :domainIncludes :GroundSurface ;
+    :rangeIncludes :QuantitativeValue ;
+    rdfs:label "slopeAngle" ;
+    rdfs:comment """
+        Angle of the slope that this ground surface has, if applicable.
+
+    """ .
+
