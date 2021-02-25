@@ -9,32 +9,32 @@ jobs:
       - uses: actions/checkout@v2
 
       # find a way to validate all files at once
-      - name: Validate
+      - name: Validate Portal.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Portal.ttl
 
-      - name: Validate
+      - name: Validate GroundSurfaceEnumeration.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
-          input: knowledge/GroundSurface.ttl
+          input: knowledge/GroundSurfaceEnumeration.ttl
 
-      - name: Validate
+      - name: Validate Place.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Place.ttl
 
-      - name: Validate
+      - name: Validate Product.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Product.ttl
 
-      - name: Validate
+      - name: Validate Thing.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Thing.ttl
 
-      - name: Validate
+      - name: Validate Toilet.ttl
         uses: vemonet/jena-riot-action@v3.14
         with:
           input: knowledge/Toilet.ttl
