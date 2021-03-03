@@ -59,18 +59,16 @@
     :domainIncludes :Shower ;
     :rangeIncludes :GrabBar ;
     rdfs:label "hasInShowerGrabBar" ;
-    # ToDo comment anpassen
     rdfs:comment """
-        True if has grab bars in the bathroom, false if not and undefined if unknown.
+        Describes grab bar that you can use to get into the shower.
     """ .
 
 :hasIntoShowerGrabBar a rdf:Property ;
     :domainIncludes :Shower ;
     :rangeIncludes :GrabBar ;
     rdfs:label "hasIntoShowerGrabBar" ;
-    # ToDo comment anpassen
     rdfs:comment """
-        True if there grab bars in the shower, false if not and undefined if unknown.
+        Describes grab bar while using the shower.
     """ .
 
 :hasTransferSeat a rdf:Property ;

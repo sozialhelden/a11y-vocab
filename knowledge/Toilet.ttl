@@ -114,10 +114,8 @@
     :domainIncludes :Toilet ;
     :rangeIncludes :GrabBar ;
     rdfs:label "hasGrabBars" ;
-    # ToDo comment anpassen
     rdfs:comment """
-        True if the toilet has a pair of grab bars, or a single grab bar on one side,
-        False if there is no grab rail.
+        Grab Bars next to the toilet.
     """ .
 
 :hasTransferSeat a rdf:Property ;
